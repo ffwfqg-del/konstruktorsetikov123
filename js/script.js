@@ -2,13 +2,35 @@ function isMobileDevice() {
     return /Mobi|Android/i.test(navigator.userAgent);
 }
 
+// Получаем базовый путь репозитория (например, /konstruktorsetikov123/)
+const getBasePath = () => {
+    const path = window.location.pathname;
+    // Если путь содержит /mobile (с или без слеша), убираем его для получения базового пути
+    if (path.includes('/mobile')) {
+        const base = path.split('/mobile')[0];
+        return base || '';
+    }
+    // Если это корень репозитория, возвращаем путь до последнего слеша
+    const parts = path.split('/').filter(p => p);
+    if (parts.length > 0 && parts[0] !== 'mobile') {
+        return '/' + parts[0];
+    }
+    return '';
+};
+
+const baseRepoPath = getBasePath();
+
 if (isMobileDevice()) {
-    if (!window.location.pathname.includes('/mobile')) {
-        window.location.href = '/mobile/';
+    const currentPath = window.location.pathname;
+    // Проверяем, что путь содержит /mobile (с или без слеша в конце)
+    if (!currentPath.includes('/mobile')) {
+        const redirectPath = baseRepoPath + (baseRepoPath.endsWith('/') ? '' : '/') + 'mobile/';
+        window.location.href = redirectPath;
     }
 } else {
     if (window.location.pathname.includes('/mobile')) {
-        window.location.href = '/';
+        const redirectPath = baseRepoPath + (baseRepoPath ? '/' : '');
+        window.location.href = redirectPath || '/';
     }
 }
 
