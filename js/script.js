@@ -1041,6 +1041,11 @@ function getItemsBySlot(slot) {
                     name: 'arkanaio',
                     ru_name: 'Аркана ИО',
                     yellow: { deff: 2, damage: 1, krit: 1, hpmax: 10 }
+                },
+                {
+                    name: 'tron',
+                    ru_name: 'Кольцо Tron',
+                    yellow: { deff: 1, damage: 1, krit: 2, hpmax: 15, armourmax: 15 }
                 }
             ]
             break;
@@ -1125,11 +1130,6 @@ function getItemsBySlot(slot) {
                     name: 'trax',
                     ru_name: 'Арбалет Траксы',
                     yellow: { damage: 2, hpmax: 7, armourmax: 7, otrazh: 1 }
-                },
-                {
-                    name: 'tron',
-                    ru_name: 'Кольцо Tron',
-                    yellow: { deff: 1, damage: 1, krit: 2, hpmax: 15, armourmax: 15 }
                 },
             ]
             break;
