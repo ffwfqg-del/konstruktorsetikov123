@@ -937,6 +937,16 @@ function getItemsBySlot(slot) {
                     ru_name: 'Корона из патрон',
                     yellow: { krit: 2, neoglysh: 8, otrazh: 2 }
                 },
+                {
+                    name: 'protocol',
+                    ru_name: 'Вертолет Протокола',
+                    yellow: { deff: 2, damage: 2, krit: 3, hpmax: 20, armourmax: 20 }
+                },
+                {
+                    name: 'shari26',
+                    ru_name: 'Волшебные шары Код 26',
+                    yellow: { deff: 2, damage: 2 }
+                },
             ]
             break;
         case 'face':
