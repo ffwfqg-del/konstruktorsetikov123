@@ -2208,7 +2208,7 @@ function addYellowImages(slotName) {
                 imageSrc: `${basePath}imgs/shoulder/skadi.webp`,
                 stats: {},
                 upg: 'deff',
-                yellow: { luck: 2, neoglysh: 8, otrazh: 2 },
+                yellow: { krit: 2, neoglysh: 8, otrazh: 2 },
                 ru_name: 'Скади',
                 name: 'skadi.webp' // Добавляем свойство name с правильным расширением
             };
