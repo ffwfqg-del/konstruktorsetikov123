@@ -535,6 +535,11 @@ const skins = [
         ru_name: 'Викинг'
     },
     {
+        imageSrc: `${basePath}imgs/skins/montgomery.webp`,
+        yellow: { deff: 2, damage: 2, otrazh: 3, armourmax: 50 },
+        ru_name: 'Монтгомери'
+    },
+    {
         imageSrc: `${basePath}imgs/skins/sydney.png`,
         yellow: { deff: 2, damage: 2, otrazh: 3 },
         ru_name: 'Суидни Суини'
@@ -1627,7 +1632,8 @@ function updateStats() {
             
             // Если выбран скин с +50 брони и перенос с Рилай/аналога, берем все статы от Рилай + только +50 брони
             if ((selectedSkin.ru_name === 'Космический Фермер' || 
-                 selectedSkin.ru_name === 'Оборотень' || selectedSkin.ru_name === 'Викинг') && 
+                 selectedSkin.ru_name === 'Оборотень' || selectedSkin.ru_name === 'Викинг' || 
+                 selectedSkin.ru_name === 'Монтгомери') && 
                 selectedSkinYellowTransfer && 
                 (selectedSkinYellowTransfer.damage === 2 && selectedSkinYellowTransfer.hpmax === 5 && selectedSkinYellowTransfer.oglysh === 5)) {
                 yellow_skin = { ...selectedSkinYellowTransfer }; // Берем все характеристики от Рилай
@@ -2562,7 +2568,8 @@ function showSkinPereshiv() {
             
             // Если выбран скин с +50 брони и перенос с Рилай/аналога, сохраняем все статы от Рилай + только +50 брони
             if ((currentSkinName === 'Космический Фермер' || 
-                 currentSkinName === 'Оборотень' || currentSkinName === 'Викинг') && 
+                 currentSkinName === 'Оборотень' || currentSkinName === 'Викинг' || 
+                 currentSkinName === 'Монтгомери') && 
                 (transferYellow.damage === 2 && transferYellow.hpmax === 5 && transferYellow.oglysh === 5)) {
                 transferYellow = { ...transferYellow }; // Берем все характеристики от Рилай
                 transferYellow.armourmax = 50; // Добавляем только +50 брони от основного скина
